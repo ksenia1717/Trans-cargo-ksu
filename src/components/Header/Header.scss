@@ -1,0 +1,138 @@
+@use '../../styles/variables' as vari;
+@use '../../styles/mixins' as mxns;
+
+.logo{
+    width: 56px;
+    height: 56px;
+    background-image: url('logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.site-header{
+    background-color: vari.$color-white;
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.company-name{
+    align-items: center;
+    text-transform: uppercase;
+
+    p{
+        text-align: center;
+        font-size: 10px;
+        color: vari.$color-text;
+
+    }
+    h1{
+        text-align: center;
+        font-size: 18px;
+        margin: 6px 0;
+        color: vari.$color-text;
+
+    }
+}
+
+.burger{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: vari.$color-primary;
+    border: none;
+    border-radius: 10px;
+    padding: 11px;
+    grid-column: 3;
+    grid-row: 1;
+    gap: 6px;
+    cursor: pointer;
+
+    &__line{
+    background-color: vari.$color-white;
+    height: 3px;
+    width: 100%;
+    display: block;
+    }
+}
+
+.phone-list{
+    display: none;
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+
+    
+
+    &__phone, &__email{
+        display: flex;
+        gap: 10px;
+        padding-bottom: 2px;
+        a{
+            color: vari.$color-text;
+            text-decoration: none;
+            display: flex;
+        }
+        
+        &:hover a{
+            text-decoration: underline;
+        }
+    }
+    &__phone::before{
+        content: '';
+        display: block;
+        background-image: url(../../../public/phone-call.svg);
+        background-size: cover;
+        width: 18px;
+        height: 18px;
+    }
+
+    &__email::before{
+        content: '';
+        display: block;
+        background-image: url(../../../public/email.svg);
+        background-size: cover;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+
+
+
+
+@include mxns.tablet-up{
+    .logo{
+        width: 100px;
+        height: 100px;
+    }
+    .phone-list{
+        display: block;
+    }
+
+    .burger{
+        display: none;
+    }
+
+    .company-name{
+        h1{
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        p{
+            font-size: 14px;
+        }
+    }
+}

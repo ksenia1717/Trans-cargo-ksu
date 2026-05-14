@@ -1,0 +1,108 @@
+@use '../../styles/mixins' as mxns;
+@use '../../styles/variables' as vari;
+
+.nav{
+    // position: relative;
+
+    .nav__backdrop{
+        position: absolute;
+        display: block;
+        z-index: 2;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(28, 27, 27, 0.509);
+        display: none;
+    }
+
+    &__menu-panel{
+        background-color: vari.$color-primary;
+        position: absolute;
+        z-index: 4;
+        right: 0px;
+        top: 0px;
+        width: 270px;
+        height: 100%;
+
+        .nav__btn-close{
+            display: block;
+            position: absolute;
+            right: 8px;
+            top: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            border: none;
+            background-image: url('../../../public/cross-icon.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            margin-top: 45px;
+            // margin-left: 30px;
+            // gap: 20px;
+        }
+
+        li{
+            list-style: none;
+            border-bottom: rgba(255, 255, 255, 0.163) 2px solid;
+        }
+
+        a{
+            display: block;
+            text-decoration: none;
+            color: vari.$color-white;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 17px;
+            padding: 16px 20px;
+            transition: all 0.3s;
+        }
+
+        a:hover{
+            background-color: vari.$color-primary-hover;
+        }
+    }
+}
+
+
+@include mxns.tablet-up{
+
+    .nav{
+        &__menu-panel{
+
+        background-color: vari.$color-primary;
+        position: relative;
+        z-index: 4;
+        width: 100%;
+
+        .nav__btn-close{
+            display: none;
+        }
+
+        ul{
+            display: flex;
+            justify-content: center;
+            // justify-content: space-between;
+            flex-direction: row;
+            margin-top: 0px;
+            // padding-right: 30px;
+        }
+
+        li{
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+            list-style: none;
+            // padding: 20px 15px;
+            border-bottom: rgba(255, 255, 255, 0.163) 2px solid;
+        }
+
+        }
+    }
+}

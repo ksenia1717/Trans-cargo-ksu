@@ -1,0 +1,37 @@
+@use '../../styles/mixins' as mxns;
+@use '../../styles/variables' as vari;
+
+.table-main-route{
+    border-radius: 15px;
+    background-color: vari.$color-white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2{
+        text-align: center;
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-color: vari.$color-primary;
+        color: vari.$color-white;
+        font-size: 18px;
+        padding: 10px 0px;
+    }
+    table{
+        // background-color: blue;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    th{
+        padding: 20px 0px;
+        
+        color: vari.$color-primary;
+        // border-bottom: 1px rgb(198, 198, 198) solid;
+    }
+    td{
+        text-align: center;
+        padding: 20px 0px;
+        font-size: 14px;
+        border-top: 1px rgb(198, 198, 198) solid;
+    }
+}

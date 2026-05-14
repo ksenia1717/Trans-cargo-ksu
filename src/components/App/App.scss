@@ -1,0 +1,50 @@
+@use '../../styles/mixins' as mxns;
+@use '../../styles/variables' as vari;
+
+
+html{
+  background-color: vari.$color-body-white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: vari.$font-family;
+}
+
+.container{
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.form{
+    background-color: vari.$color-white;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 25px;
+    padding: 40px;
+    width: 480px;
+    margin-bottom: 40px;
+}
+
+.menu__item_danger{
+  background-color: vari.$color-red;
+}
+
+h1{
+    text-align: center;
+    font-size: 27px;
+    color: vari.$color-primary ;
+}
+
+p{
+  
+  text-align: center;
+  color: vari.$color-text;
+  margin-bottom: 40px;
+}

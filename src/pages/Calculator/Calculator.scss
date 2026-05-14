@@ -1,0 +1,66 @@
+@use '../../styles/mixins' as mxns;
+@use '../../styles/variables' as vari;
+
+.calculator-page{
+
+    .calculator-forms{
+        background-color: vari.$color-white;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 25px;
+        padding: 40px;
+        width: 480px;
+    }
+
+    label{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+
+        span{
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            color: #333;
+        }
+
+        select, input{
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px #d7d4d4 solid
+        }
+
+    }
+
+    div{
+        margin-top: 10px;
+
+        p{
+            margin-bottom: 10px;
+            font-size: 20px;
+
+            span{
+                font-weight: 600;
+            }
+            .blue-p{
+                color: vari.$color-primary;
+            }
+        }
+
+    }
+}
+
+
+
+.calculator-page__p{
+    text-align: center;
+    color: vari.$color-text;
+    margin-bottom: 20px;
+}
+
+.calculator-forms{
+    display: flex;
+    flex-direction: column;
+}
+

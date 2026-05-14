@@ -1,0 +1,36 @@
+@use '../../styles/mixins' as mxns;
+@use '../../styles/variables' as vari;
+
+.aplic-form{
+    display: flex;
+    flex-direction: column;
+
+    label{
+        display: flex;
+        flex-direction: column;
+
+        span{
+            margin-bottom: 10px;
+        }
+
+        input, select, option, textarea{
+            padding: 10px 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px rgb(172, 165, 165) solid;
+        }
+    }
+
+    .send-btn{
+        background-color: vari.$color-primary;
+        border: none;
+        border-radius: 8px;
+        padding: 15px 20px;
+        margin-top: 10px;
+        color: vari.$color-white;
+    }
+    
+    .send-btn:hover{
+        background-color: vari.$color-primary-hover;
+    }
+}

@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+// -----------------------------------------------------------------------------
+// Адаптив: стили только до указанного брейкпоинта (mobile-first: max-width)
+// -----------------------------------------------------------------------------
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Фокус для доступности (видимый outline)
+// -----------------------------------------------------------------------------
+@mixin focus-visible($color: $color-primary) {
+  &:focus {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color;
+    outline-offset: 2px;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Карточка: фон, отступы, скругление, тень
+// -----------------------------------------------------------------------------
+@mixin card($padding: $padding-card) {
+  background-color: $color-bg-card;
+  padding: $padding;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+
+  @include mobile {
+    padding: $padding-card-mobile;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Блок страницы: отступы + max-width + центрирование
+// -----------------------------------------------------------------------------
+@mixin page-block($max-width: $container-max) {
+  padding: $padding-page;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  @include mobile {
+    padding: $padding-page-mobile;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Заголовок страницы (h1)
+// -----------------------------------------------------------------------------
+@mixin page-title {
+  color: $color-primary;
+  margin-bottom: $space-md;
+  text-align: center;
+}
+
+// -----------------------------------------------------------------------------
+// Вводные текст страницы (intro)
+// -----------------------------------------------------------------------------
+@mixin page-intro {
+  margin-bottom: $space-lg;
+  color: $color-text-muted;
+  line-height: $line-height-base;
+}
+
+// -----------------------------------------------------------------------------
+// Поле формы: фокус с цветом бренда
+// -----------------------------------------------------------------------------
+@mixin input-focus {
+  &:focus {
+    outline: none;
+    border-color: $color-primary-border;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Кнопка основного действия
+// -----------------------------------------------------------------------------
+@mixin btn-primary {
+  background: $color-primary;
+  color: $color-white;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $color-primary-hover;
+  }
+}
