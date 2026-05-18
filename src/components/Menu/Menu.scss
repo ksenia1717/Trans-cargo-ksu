@@ -6,13 +6,14 @@
 
     .nav__backdrop{
         position: absolute;
-        display: block;
+        display: none;
         z-index: 2;
         width: 100vw;
         height: 100vh;
         background-color: rgba(28, 27, 27, 0.509);
-        display: none;
+
     }
+
 
     &__menu-panel{
         background-color: vari.$color-primary;
@@ -22,6 +23,8 @@
         top: 0px;
         width: 270px;
         height: 100%;
+        transition: all 0.5s;
+        transform: translateX(400px);
 
         .nav__btn-close{
             display: block;
@@ -37,6 +40,7 @@
             background-position: center;
             background-color: rgba(255, 255, 255, 0);
         }
+
 
         ul{
             display: flex;
@@ -67,6 +71,10 @@
             background-color: vari.$color-primary-hover;
         }
     }
+
+    &__menu-panel--open{
+        transform: translateX(0px)
+    }
 }
 
 
@@ -79,6 +87,7 @@
         position: relative;
         z-index: 4;
         width: 100%;
+        transform: translateX(0px);
 
         .nav__btn-close{
             display: none;

@@ -1,6 +1,6 @@
 
 export default function Document() {
   return (
-    <div>Document</div>
+    <h1>В разработке..</h1>
   )
 }

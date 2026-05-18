@@ -1,6 +1,6 @@
 
 export default function DangerousCargo() {
   return (
-    <div>DangerousCargo</div>
+    <h1>В разработке..</h1>
   )
 }

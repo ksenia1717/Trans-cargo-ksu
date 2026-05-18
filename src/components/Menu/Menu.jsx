@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Menu.scss';
+// import { useState } from 'react';
+// import 
 // import {Link} from 'react-router-dom';
 
-export default function Menu() {
+export default function Menu(clickMenuClose, isActive) {
 
     const menuData = [
         {id:1, item: 'Цены', path: './prices'},
@@ -13,17 +15,21 @@ export default function Menu() {
         { id: 6, item: 'Онлайн заявка', path: '/application' },
     ];
 
+    
+
+
   return (
     <nav className='nav'>
         <div className='nav__backdrop'>
         </div>
 
-        <div className='nav__menu-panel'>
+        <div className={`nav__menu-panel ${isActive ? 'nav__menu-panel--open' : ''}`}>
             <button
             type='button'
+            onClick={clickMenuClose}
+            
             className='nav__btn-close'
             ></button>
-
             <ul className='menu'>
                 {menuData.map(({id, item, path, danger}) => (
                     <li key={id} className={`menu__item ${danger ? 'menu__item_danger' : ''}`}>

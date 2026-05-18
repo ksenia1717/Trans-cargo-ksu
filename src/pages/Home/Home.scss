@@ -1,0 +1,11 @@
+@use '../../styles/mixins' as mxns;
+@use '../../styles/variables' as vari;
+
+.form-home{
+    width: 1070px;
+
+    p{
+        margin-bottom: 30px;
+        text-align: start;
+    }
+}

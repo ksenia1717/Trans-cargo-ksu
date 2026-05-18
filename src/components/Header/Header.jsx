@@ -1,9 +1,10 @@
+// import { useState } from 'react';
 import './Header.scss';
 
 
 
 
-export default function Header(menuOpen, onMenuToggle) {
+export default function Header(menuOpen, isActive, clickMenuTogle) {
     const phoneData = [
         {id: 1, phone:'+7(926)916-60-57' },
         {id: 2, phone:'+7(968)026-11-99' },
@@ -11,10 +12,14 @@ export default function Header(menuOpen, onMenuToggle) {
         {id: 4, email: 'trcargo-a@mail.ru' },
     ]
 
+
+
+
+
   return (
     <header className='site-header'>
         <div className='header-inner'>
-            <div className='logo'></div>
+            <a href="./"><div className='logo'></div></a>
 
             <div className="company-name">
                 <p>ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ</p>
@@ -33,10 +38,10 @@ export default function Header(menuOpen, onMenuToggle) {
 
             <button
             type='button'
-            className={`burger ${menuOpen ? 'nav-open' : ''}`}
-            aria-label={menuOpen ? 'Открыть меню' : 'Закрыть меню'}
-            aria-expanded={menuOpen}
-            onClick={onMenuToggle}>
+            className={`burger ${isActive ? 'nav-open' : ''}`}
+            onClick={clickMenuTogle}
+            
+            >
             
                 <span className="burger__line"></span>
                 <span className="burger__line"></span>

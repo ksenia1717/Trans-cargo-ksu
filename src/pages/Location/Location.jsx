@@ -1,6 +1,6 @@
 
 export default function Location() {
   return (
-    <div>Location</div>
+    <h1>В разработке..</h1>
   )
 }
